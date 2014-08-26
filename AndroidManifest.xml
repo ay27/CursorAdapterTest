@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.CursorAdapterTest"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="19"/>
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+        <provider android:name="com.example.CursorAdapterTest.PickerContentProvider" android:authorities="org.bitman.ay27.Picker"
+                android:exported="false"/>
+        <activity android:name="MyActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.ay27.test"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:mimeType="vnd.android.cursor.item/vnd.ay27.test"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+    <!--<provider android:name="com.example.CursorAdapterTest.MyContentProvider" android:authorities="com.example.CursorAdapterTest"/>-->
+
+</manifest>
