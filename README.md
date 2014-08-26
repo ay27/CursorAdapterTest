@@ -10,5 +10,7 @@
 
 ###受到[stormzhang](http://stormzhang.github.io)的[9GAG](https://github.com/stormzhang/9GAG)项目的启发
 在这个项目里边我知道了REST Client这个概念，知道了原来网络应用可以通过数据库进行数据中转，从而巧妙的解决了网络不能在UI线程中的问题，而且通过 ` CursorAdapter ` 可以很方便的与数据库进行绑定。
+当然我这个demo只是练手而已，尚不涉及网络部分。
 
-
+###简单解释
+1. ContentProvider作为数据提供者，

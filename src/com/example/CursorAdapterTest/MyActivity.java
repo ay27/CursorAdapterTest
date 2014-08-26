@@ -20,7 +20,7 @@ public class MyActivity extends Activity implements LoaderManager.LoaderCallback
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
+ 
         listView = (ListView)findViewById(R.id.listView);
 
         // 避免在UI线程中加载数据而带来的性能问题，具体表现为：对数据库进行载入、操作时UI会有稍微的卡顿，特别是载入时
