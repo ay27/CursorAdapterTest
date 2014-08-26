@@ -1,5 +1,6 @@
 package com.example.CursorAdapterTest;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.app.LoaderManager;
 import android.content.*;
@@ -10,28 +11,34 @@ import android.util.Log;
 import android.view.*;
 import android.widget.*;
 
-public class MyActivity extends ListActivity implements LoaderManager.LoaderCallbacks<Cursor>, AdapterView.OnItemClickListener {
-    SimpleCursorAdapter adapter;
+public class MyActivity extends Activity implements LoaderManager.LoaderCallbacks<Cursor>, AdapterView.OnItemClickListener {
+    CursorAdapter adapter;
     public static final Uri bookUri = BookTable.CONTENT_URI;
+    private ListView listView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+        listView = (ListView)findViewById(R.id.listView);
 
         // 避免在UI线程中加载数据而带来的性能问题，具体表现为：对数据库进行载入、操作时UI会有稍微的卡顿，特别是载入时
         // 使用LoaderManager可以解决
         getLoaderManager().initLoader(0, null, this);
 
         // Cursor项保持为空，在LoadFinish() 中会把cursor设置正确
-        adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, null,
-                new String[]{BookTable.KEY_BOOK_NAME}, new int[]{android.R.id.text1}, 0);
-        getListView().setAdapter(adapter);
-        getListView().setOnItemClickListener(this);
+        adapter = new MyCursorAdapter(this, null, false);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
     }
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        getContentResolver().delete(bookUri, BookTable.KEY_BOOK_NAME+"=?", new String[]{"book_name"});
+//        getContentResolver().delete(bookUri, BookTable.KEY_BOOK_NAME+"=?", new String[]{"book_name"});
+        ViewHolder holder = (ViewHolder) view.getTag();
+        getContentResolver().delete(bookUri, BookTable._ID+"=?", new String[]{holder.id});
         getLoaderManager().restartLoader(0, null, this);
     }
 
