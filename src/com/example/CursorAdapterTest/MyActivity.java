@@ -12,7 +12,6 @@ import android.widget.*;
 
 public class MyActivity extends ListActivity implements LoaderManager.LoaderCallbacks<Cursor>, AdapterView.OnItemClickListener {
     SimpleCursorAdapter adapter;
-    public static final Uri userUri = UserTable.CONTENT_URI;
     public static final Uri bookUri = BookTable.CONTENT_URI;
 
     @Override
@@ -25,14 +24,14 @@ public class MyActivity extends ListActivity implements LoaderManager.LoaderCall
 
         // Cursor项保持为空，在LoadFinish() 中会把cursor设置正确
         adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, null,
-                new String[]{UserTable.KEY_USER_EMAIL}, new int[]{android.R.id.text1}, 0);
+                new String[]{BookTable.KEY_BOOK_NAME}, new int[]{android.R.id.text1}, 0);
         getListView().setAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        getContentResolver().delete(userUri, UserTable.KEY_USER_EMAIL+"=?", new String[]{"me@ay27.pw"});
+        getContentResolver().delete(bookUri, BookTable.KEY_BOOK_NAME+"=?", new String[]{"book_name"});
         getLoaderManager().restartLoader(0, null, this);
     }
 
@@ -45,18 +44,14 @@ public class MyActivity extends ListActivity implements LoaderManager.LoaderCall
         @Override
         public void run() {
             ContentValues newValues = new ContentValues();
-            newValues.put(UserTable._ID, 123445);
-            newValues.put(UserTable.KEY_USER_ID, 123456);
-            newValues.put(UserTable.KEY_USERNAME, "ay27");
-            newValues.put(UserTable.KEY_USER_PASSWORD, "____");
-            newValues.put(UserTable.KEY_USER_LOGO, "logo logo");
-            newValues.put(UserTable.KEY_USER_EMAIL, "me@ay27.pw");
-            getContentResolver().insert(UserTable.CONTENT_URI, newValues);
+            newValues.put(BookTable.KEY_BOOK_ISBN, 12345678);
+            newValues.put(BookTable.KEY_BOOK_NAME, "book_name");
+            getContentResolver().insert(bookUri, newValues);
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     // 这两种方法都可以实现，但是效率不知道如何
-                    adapter.swapCursor(getContentResolver().query(UserTable.CONTENT_URI, null, null, null, null));
+                    adapter.swapCursor(getContentResolver().query(bookUri, null, null, null, null));
 //                    getLoaderManager().restartLoader(0, null, MyActivity.this);
                 }
             });
@@ -67,7 +62,7 @@ public class MyActivity extends ListActivity implements LoaderManager.LoaderCall
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        return new CursorLoader(this, UserTable.CONTENT_URI, null, null, null, null);
+        return new CursorLoader(this, bookUri, null, null, null, null);
     }
 
     @Override
@@ -91,14 +86,6 @@ public class MyActivity extends ListActivity implements LoaderManager.LoaderCall
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.add) {
             new MyThread().start();
-
-            ContentValues values = new ContentValues();
-            values.put(BookTable.KEY_BOOK_ID, 12344);
-            values.put(BookTable.KEY_BOOK_ISBN, "1234567890123");
-            values.put(BookTable.KEY_BOOK_NAME, "book name");
-            Uri result = getContentResolver().insert(bookUri, values);
-            Log.i("MainActivity", result.toString());
-
             return true;
         }
         return super.onOptionsItemSelected(item);

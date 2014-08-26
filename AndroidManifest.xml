@@ -5,7 +5,7 @@
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="19"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
-        <provider android:name="com.example.CursorAdapterTest.PickerContentProvider" android:authorities="org.bitman.ay27.Picker"
+        <provider android:name=".MyContentProvider" android:authorities="org.bitman.ay27.test"
                 android:exported="false"/>
         <activity android:name="MyActivity"
                   android:label="@string/app_name">

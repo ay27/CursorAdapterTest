@@ -15,25 +15,21 @@ import android.util.Log;
  * Proudly to use Intellij IDEA.
  * Created by ay27 on 14-8-26.
  */
-public class PickerContentProvider extends ContentProvider {
+public class MyContentProvider extends ContentProvider {
 
     private static final String TAG = "PickerContentProvider";
 
     public static final UriMatcher sUriMatcher;
-    public static final int USER = 1;
-    public static final int BOOK = 2;
+    public static final int BOOK = 1;
     private static final Object DBLock = new Object();
 
     static {
         sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        sUriMatcher.addURI(PickerDB.AUTHORITY, "user", USER);
-        sUriMatcher.addURI(PickerDB.AUTHORITY, "book", BOOK);
+        sUriMatcher.addURI(MyDB.AUTHORITY, "book", BOOK);
     }
 
     private String getMatchTable(Uri uri) {
         switch (sUriMatcher.match(uri)) {
-            case USER:
-                return UserTable.TABLE_NAME;
             case BOOK:
                 return BookTable.TABLE_NAME;
             default:
@@ -44,8 +40,6 @@ public class PickerContentProvider extends ContentProvider {
     @Override
     public String getType(Uri uri) {
         switch (sUriMatcher.match(uri)) {
-            case USER:
-                return UserTable.CONTENT_DIR_TYPE;
             case BOOK:
                 return BookTable.CONTENT_DIR_TYPE;
             default:
@@ -57,11 +51,11 @@ public class PickerContentProvider extends ContentProvider {
 
 
 
-    private static PickerDBHelper mDBHelper;
+    private static MyDBHelper mDBHelper;
 
     public SQLiteOpenHelper getDBHelper() {
         if (mDBHelper == null)
-            mDBHelper = new PickerDBHelper(getContext(), PickerDB.DATABASE_NAME, null, PickerDB.DATABASE_VERSION);
+            mDBHelper = new MyDBHelper(getContext(), MyDB.DATABASE_NAME, null, MyDB.DATABASE_VERSION);
         return mDBHelper;
     }
 
@@ -103,7 +97,7 @@ public class PickerContentProvider extends ContentProvider {
             getContext().getContentResolver().notifyChange(uri, null);
 
             if (rowID > 0)
-                return ContentUris.withAppendedId(UserTable.CONTENT_URI, rowID);
+                return ContentUris.withAppendedId(BookTable.CONTENT_URI, rowID);
             return null;
         }
     }
