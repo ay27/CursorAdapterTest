@@ -47,11 +47,11 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56333333" vertical-offset="0" max-vertical-offset="2444">
-              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.43333334" vertical-offset="572" max-vertical-offset="2444">
+              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="56" />
               <folding>
-                <element signature="e#2756#2757#0" expanded="true" />
-                <element signature="e#2798#2799#0" expanded="true" />
+                <element signature="e#2755#2756#0" expanded="true" />
+                <element signature="e#2797#2798#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,7 +70,7 @@
       <file leaf-file-name="MyCursorAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyCursorAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="830" max-vertical-offset="1326">
+            <state vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="1326">
               <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,8 +122,8 @@
       <file leaf-file-name="MyContentProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyContentProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="3640">
-              <caret line="99" column="71" selection-start-line="99" selection-start-column="71" selection-end-line="99" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2236" max-vertical-offset="3640">
+              <caret line="96" column="70" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -132,8 +132,8 @@
       <file leaf-file-name="MyDBHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyDBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-              <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="884">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding>
                 <element signature="e#765#766#0" expanded="true" />
                 <element signature="e#819#820#0" expanded="true" />
@@ -573,12 +573,12 @@
       <workItem from="1409017047363" duration="16538000" />
       <workItem from="1409048524995" duration="6928000" />
       <workItem from="1409063077161" duration="395000" />
-      <workItem from="1409063617521" duration="2458000" />
+      <workItem from="1409063617521" duration="3074000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37726000" />
+    <option name="totallyTimeSpent" value="38342000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="782" extended-state="0" />
@@ -666,8 +666,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1846" max-vertical-offset="2912">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <element signature="e#2756#2757#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
+            <element signature="e#2755#2756#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,8 +720,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="2600">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#2756#2757#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
+            <element signature="e#2755#2756#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -891,25 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="520">
-          <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyDBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
-          <folding>
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/BookTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="754">
@@ -948,18 +929,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyContentProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3640">
-          <caret line="99" column="71" selection-start-line="99" selection-start-column="71" selection-end-line="99" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/ViewHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="520">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyDBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="884">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="520">
+          <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -978,13 +970,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyContentProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2236" max-vertical-offset="3640">
+          <caret line="96" column="70" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/CursorAdapterTest/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56333333" vertical-offset="0" max-vertical-offset="2444">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.43333334" vertical-offset="572" max-vertical-offset="2444">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="56" />
           <folding>
-            <element signature="e#2756#2757#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
+            <element signature="e#2755#2756#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
           </folding>
         </state>
       </provider>
