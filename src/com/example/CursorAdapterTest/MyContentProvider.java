@@ -73,7 +73,10 @@ public class MyContentProvider extends ContentProvider {
         // TODO : add the other args.
 
         SQLiteDatabase db = getDBHelper().getReadableDatabase();
-        return queryBuilder.query(db, projection, selection, selectionArgs, null, null, null);
+        Cursor cursor = queryBuilder.query(db, projection, selection, selectionArgs, null, null, null);
+        // 这里是关键
+        cursor.setNotificationUri(getContext().getContentResolver(), uri);
+        return cursor;
     }
 
 

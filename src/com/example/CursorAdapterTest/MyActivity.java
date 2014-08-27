@@ -39,7 +39,7 @@ public class MyActivity extends Activity implements LoaderManager.LoaderCallback
 //        getContentResolver().delete(bookUri, BookTable.KEY_BOOK_NAME+"=?", new String[]{"book_name"});
         ViewHolder holder = (ViewHolder) view.getTag();
         getContentResolver().delete(bookUri, BookTable._ID+"=?", new String[]{holder.id});
-        getLoaderManager().restartLoader(0, null, this);
+//        getLoaderManager().restartLoader(0, null, this);
     }
 
     // 为了测试在不同线程中，能否对数据库进行更改
@@ -54,14 +54,14 @@ public class MyActivity extends Activity implements LoaderManager.LoaderCallback
             newValues.put(BookTable.KEY_BOOK_ISBN, 12345678);
             newValues.put(BookTable.KEY_BOOK_NAME, "book_name");
             getContentResolver().insert(bookUri, newValues);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    // 这两种方法都可以实现，但是效率不知道如何
-                    adapter.swapCursor(getContentResolver().query(bookUri, null, null, null, null));
-//                    getLoaderManager().restartLoader(0, null, MyActivity.this);
-                }
-            });
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    // 这两种方法都可以实现，但是效率不知道如何
+//                    adapter.swapCursor(getContentResolver().query(bookUri, null, null, null, null));
+////                    getLoaderManager().restartLoader(0, null, MyActivity.this);
+//                }
+//            });
 
             newValues.clear();
         }
@@ -75,7 +75,7 @@ public class MyActivity extends Activity implements LoaderManager.LoaderCallback
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         adapter.swapCursor(data);
-        adapter.notifyDataSetChanged();
+//        adapter.notifyDataSetChanged();
     }
 
     @Override

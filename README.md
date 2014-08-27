@@ -23,5 +23,13 @@
 
 1. 在LoaderManager的Callback中的OnLoadFinished函数中 ` adapter.swapCursor(cursor) `，经验证，不太靠谱，原因是LoaderManager的Callback只在Activity启动时会触发，即使在ContentProvider的insert操作完成后 ` getContext().getContentResolver().notifyChange(uri, null) `
 2. 在更新数据后，强制刷新LoaderManager： ` getLoaderManager().restartLoader(0, null, this) `，实测可用，但是担心性能问题
-3. 更新数据后重新query获取新的Cursor，然后替换掉adapter中的Cursor，实测可用，但是性能估计还是不好
-4. 应该还有更好的方法，寻求中。。。
+3. 更新数据后重新query获取新的Cursor，然后替换掉adapter中的Cursor，实测可用，但是需要每次操作完成后手动query并替换，一旦忘了就不行了
+
+###一个合理的方案
+需要这样设计一个通知链：` insert or delete --> requery --> onLoadFinished -->swapCursor `
+
+* insert或delete操作后，调用一次 ` getContext().getContentResolver().notifyChange(uri, null) `，从而触发LoaderManager进行 ` 重新query `
+* 在query方法里边，添加上 ` cursor.setNotificationUri(getContext().getContentResolver(), uri) `，从而触发LoaderManager的 ` onLoadFinished ` 方法
+* 在onLoadFinished里边加上 ` adapter.swapCursor(cursor) `，完成ListView的 ` cusor更新 `
+
+最后的一个方法，是在[stormzhang](http://stormzhang.github.io)的指点下完成的，非常感谢[stormzhang](http://stormzhang.github.io)的热心指点！
